@@ -1,0 +1,35 @@
+
+
+
+<div class="col-sm-6 offset-sm-3">
+    <h2>Creacion de un nuevo mensaje:</h2>
+<form (ngSubmit) = "onSubmitForm()">
+     
+    <div class="form-group">
+        <label> id </label>
+        <input type="text" class ="form-control" id = "id" [(ngModel)] = "mensaje.id" name = "id">
+    </div>
+ 
+    <div class="form-group">
+        <label> id de destino </label>
+        <input type="text" class ="form-control" id = "id_destino" [(ngModel)] = "mensaje.id_destino" name = "id_destino">
+    </div>
+ 
+    <div class="form-group">
+        <label> ID de origen</label>
+        <input type="text" class ="form-control" id = "id_origen" [(ngModel)] = "mensaje.id_origen" name = "id_origen">
+    </div>
+
+    <div class="form-group">
+        <label> Texto </label>
+        <input type="text" class ="form-control" id = "texto" [(ngModel)] = "mensaje.texto" name = "texto">
+    </div>
+    <div class="form-group">
+        <label> Fecha </label>
+        <input type="date" class ="form-control" id = "fecha" [(ngModel)] = "mensaje.fecha" name = "fecha">
+    </div>
+ 
+    <button class = "btn btn-success" type ="submit">Submit</button>
+ 
+</form>
+</div>

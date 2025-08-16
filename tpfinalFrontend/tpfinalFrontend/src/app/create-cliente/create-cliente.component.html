@@ -1,0 +1,31 @@
+
+
+
+<div class="col-sm-6 offset-sm-3">
+    <h2>Creacion de un nuevo cliente:</h2>
+<form (ngSubmit) = "onSubmitForm()">
+     
+    <div class="form-group">
+        <label> Nombre </label>
+        <input type="text" class ="form-control" id = "nombre" [(ngModel)] = "cliente.nombre" name = "nombre">
+    </div>
+ 
+    <div class="form-group">
+        <label> Email </label>
+        <input type="text" class ="form-control" id = "email" [(ngModel)] = "cliente.email" name = "email">
+    </div>
+ 
+    <div class="form-group">
+        <label> ID de gestor</label>
+        <input type="text" class ="form-control" id = "id_gestor" [(ngModel)] = "cliente.id_gestor" name = "id_gestor">
+    </div>
+
+    <div class="form-group">
+        <label> ID </label>
+        <input type="text" class ="form-control" id = "id" [(ngModel)] = "cliente.id" name = "id">
+    </div>
+ 
+    <button class = "btn btn-success" type ="submit">Submit</button>
+ 
+</form>
+</div>

@@ -1,0 +1,29 @@
+<h2> Lista de clientes</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ID de gestor</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <!-- El bucle recorre cada usuario de users-->
+    <!-- Este archivo html está asociado a su respectivo .ts -->
+    <!-- users es una propiedad definida en el .ts users: User[]-->
+    <tbody>
+        <tr *ngFor = "let cliente of clientes">
+            <!-- {{}} Es interpolación para acceder a los campos -->
+            <td>{{cliente.id}}</td>
+            <td>{{cliente.id_gestor}}</td>
+            <td>{{cliente.nombre}}</td>
+            <td>{{cliente.email}}</td>
+            <td>
+                <!--Estos botones llaman a los métodos definidos en el .ts del componente user-list-->
+                
+                <button (click) = "deleteCliente(cliente.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
