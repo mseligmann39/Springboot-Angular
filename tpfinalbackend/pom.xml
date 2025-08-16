@@ -8,14 +8,14 @@
 		<version>3.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.modulo5-1</groupId>
-	<artifactId>modulo5-1</artifactId>
+	<groupId>com.modulo51</groupId>
+	<artifactId>modulo51</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>tpfinalbackend</name>
 	<description>Project Spring boot demo</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>24</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
