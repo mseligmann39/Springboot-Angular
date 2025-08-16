@@ -17,7 +17,7 @@ export class ClienteListComponent implements OnInit{
   }
 
   private getClientes(){
-    this.clienteService.findAllClientes().subscribe(clienteData => {this.clientes = clienteData});
+    this.clienteService.obtenerListaDeClientes().subscribe(clienteData => {this.clientes = clienteData});
   }
 
   updateCliente(id: number){
