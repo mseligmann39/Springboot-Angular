@@ -128,7 +128,7 @@ El backend expone los siguientes endpoints bajo la URL base `/api`.
 ---
 
 ## 📁 Estructura del Proyecto
-proyecto/
+```proyecto/
 ├── tpfinalbackend/              # Proyecto de Spring Boot (Backend)
 │   ├── src/main/java/           # Código fuente del backend
 │   │   ├── controller/          # Controladores REST
@@ -144,4 +144,4 @@ proyecto/
     │   ├── mensajes/            # Módulo y componentes para Mensajes
     │   ├── transferencias/      # Módulo y componentes para Transferencias
     │   └── services/            # Servicios para la comunicación con la API
-    └── angular.json             # Configuración del proyecto Angular
+    └── angular.json             # Configuración del proyecto Angular```
