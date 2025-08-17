@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.modulo51.demo.model.GestorModel;
 import com.modulo51.demo.service.GestorService;
 
+import jakarta.validation.Valid;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/gestor")
@@ -23,32 +25,29 @@ public class GestorController {
 
 	@Autowired
 	GestorService gestorService;
-	
+
 	@GetMapping
-	public ArrayList<GestorModel> obtenerGestor(){
+	public ArrayList<GestorModel> obtenerGestor() {
 		return gestorService.obtenerGestor();
 	}
-	
+
 	@PostMapping
-	public GestorModel guardarGestor(@RequestBody GestorModel gestor) {
+	public GestorModel guardarGestor(@Valid @RequestBody GestorModel gestor) {
 		return this.gestorService.guardarGestor(gestor);
-				
 	}
-	
+
 	@GetMapping(path = "/{id}")
-		public Optional<GestorModel> obetenerPorId(@PathVariable("id")Long id){
+	public Optional<GestorModel> obetenerPorId(@PathVariable("id") Long id) {
 		return this.gestorService.obtenerGestorPorId(id);
 	}
-	
-			
+
 	@DeleteMapping(path = "/{id}")
-	public String eliminarPorId(@PathVariable("id")Long id) {
+	public String eliminarPorId(@PathVariable("id") Long id) {
 		boolean ok = this.gestorService.eliminarGestor(id);
-		if (ok) { 
+		if (ok) {
 			return "Se elimino el gestor con id" + id;
-		}
-		else {
-			return "Error al eliminar el gestor con id" +id + "o no existe";
+		} else {
+			return "Error al eliminar el gestor con id" + id + "o no existe";
 		}
 	}
 

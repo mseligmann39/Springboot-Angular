@@ -7,9 +7,6 @@ import { environment } from '../enviroments/enviroment';
 @Injectable({
   providedIn: 'root'
 })
-@Injectable({
-  providedIn: 'root'
-})
 export class ClienteService {
 
   // Construimos la URL base específica para los clientes

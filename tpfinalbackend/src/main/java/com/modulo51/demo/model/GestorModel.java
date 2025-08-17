@@ -6,6 +6,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+
 
 @Entity
 @Table(name = "gestor")
@@ -15,11 +19,15 @@ public class GestorModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@NotBlank(message = "El nombre no puede estar vacío")
 	private String nombre;
 
+	@NotBlank(message = "El email no puede estar vacío")
+	@Email(message = "El formato del email no es válido")
 	@Column(unique = true)
 	private String email;
 
+	@Min(value = 18, message = "La edad mínima debe ser 18 años")
 	private Integer edad;
 
 	public Long getId() {

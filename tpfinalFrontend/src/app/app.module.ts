@@ -8,6 +8,8 @@ import { CreateClienteComponent } from './create-cliente/create-cliente.componen
 import { FormsModule } from '@angular/forms';
 import { UpdateClienteComponent } from './update-cliente/update-cliente.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     ClienteListComponent,
     CreateClienteComponent,
-    UpdateClienteComponent
+    UpdateClienteComponent,
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
