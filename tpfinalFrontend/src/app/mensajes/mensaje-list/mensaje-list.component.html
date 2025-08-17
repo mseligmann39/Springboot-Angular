@@ -1,0 +1,32 @@
+<h2>Lista de Mensajes</h2>
+
+<button routerLink="nuevo" class="btn btn-primary mb-3">Añadir Mensaje</button>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ID Origen</th>
+            <th>ID Destino</th>
+            <th>Contenido</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <!-- El bucle recorre cada mensaje de mensajes -->
+    <!-- Este archivo html está asociado a su respectivo .ts -->
+    <!-- mensajes es una propiedad definida en el .ts: mensajes: Mensaje[] -->
+    <tbody>
+        <tr *ngFor="let mensaje of mensajes">
+            <td>{{ mensaje.id }}</td>
+            <td>{{ mensaje.id_origen }}</td>
+            <td>{{ mensaje.id_destino }}</td>
+            <td>{{ mensaje.texto }}</td>
+            <td>{{ mensaje.fecha }}</td>
+            <td>
+                <button (click)="actualizarMensaje(mensaje.id)" class="btn btn-info">Editar</button>
+                <button (click)="eliminarMensaje(mensaje.id)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

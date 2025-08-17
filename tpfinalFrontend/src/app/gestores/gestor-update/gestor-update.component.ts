@@ -42,6 +42,6 @@ export class GestorUpdateComponent {
 
   //Redirección a lista de gestores
   redirectGestorList() {
-    this.router.navigate(['/gestoreslist']);
+    this.router.navigate(['/gestores']);
   }
 }

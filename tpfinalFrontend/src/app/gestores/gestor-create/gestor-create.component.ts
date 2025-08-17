@@ -36,6 +36,6 @@ export class GestorCreateComponent {
   }
 
   redirectGestorList() {
-    this.router.navigate(['/gestorList']);
+    this.router.navigate(['/gestores']);
   }
 }

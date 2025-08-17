@@ -1,31 +1,53 @@
 <div class="col-sm-6 offset-sm-3">
-    <h2>Actualización de un gestor:</h2>
+  <h2>Actualización de un gestor:</h2>
 
-    <!-- Usamos Binding de Angular para llamar al método del .ts asociado -->
-    <!-- La sintaxis [()] BananaInBox es un Two-Way Binding -->
-    <form (ngSubmit)="onSubmitForm()">
+  <!-- Usamos Binding de Angular para llamar al método del .ts asociado -->
+  <!-- La sintaxis [()] BananaInBox es un Two-Way Binding -->
+  <form (ngSubmit)="onSubmitForm()">
+    <div class="form-group">
+      <label>Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        [(ngModel)]="gestor.nombre"
+        name="nombre"
+      />
+    </div>
 
-        <div class="form-group">
-            <label>Nombre</label>
-            <input type="text" class="form-control" id="nombre" [(ngModel)]="gestor.nombre" name="nombre">
-        </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        [(ngModel)]="gestor.email"
+        name="email"
+      />
+    </div>
 
-        <div class="form-group">
-            <label>Email</label>
-            <input type="text" class="form-control" id="email" [(ngModel)]="gestor.email" name="email">
-        </div>
+    <div class="form-group">
+      <label>Edad</label>
+      <input
+        type="number"
+        class="form-control"
+        id="edad"
+        [(ngModel)]="gestor.edad"
+        name="edad"
+      />
+    </div>
 
-        <div class="form-group">
-            <label>Edad</label>
-            <input type="number" class="form-control" id="edad" [(ngModel)]="gestor.edad" name="edad">
-        </div>
+    <div class="form-group">
+      <label>ID</label>
+      <input
+        type="text"
+        class="form-control"
+        id="id"
+        [(ngModel)]="gestor.id"
+        name="id"
+      />
+    </div>
 
-        <div class="form-group">
-            <label>ID</label>
-            <input type="text" class="form-control" id="id" [(ngModel)]="gestor.id" name="id">
-        </div>
-
-        <button class="btn btn-success" type="submit">Submit</button>
-
-    </form>
+    <button class="btn btn-success" type="submit">Submit</button>
+  </form>
 </div>

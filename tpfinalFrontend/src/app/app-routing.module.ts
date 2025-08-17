@@ -11,6 +11,8 @@ const routes: Routes = [
   { path: 'clientes/crear', component: CreateClienteComponent },
   { path: 'actualizar-cliente/:id', component: UpdateClienteComponent },
   { path: 'gestores', loadChildren: () => import('./gestores/gestores.module').then(m => m.GestoresModule) },
+  { path: 'transferencias', loadChildren: () => import('./transferencias/transferencias.module').then(m => m.TransferenciasModule) },
+  { path: 'mensajes', loadChildren: () => import('./mensajes/mensajes.module').then(m => m.MensajesModule) },
   // Aquí añadiremos las rutas para gestores, transferencias, etc. más adelante
 ];
 
