@@ -39,5 +39,14 @@ public class GestorService {
 		}
 		
 	}
+
+	public GestorModel actualizarGestor(Long id, GestorModel gestor) {
+		if (gestorRepository.existsById(id)) {
+			gestor.setId(id);
+			return gestorRepository.save(gestor);
+		} else {
+			return null; // or throw an exception
+		}
+	}
 	
 }

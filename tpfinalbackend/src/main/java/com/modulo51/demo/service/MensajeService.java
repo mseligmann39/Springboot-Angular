@@ -40,4 +40,12 @@ public class MensajeService {
 		
 	}
 
+	public MensajeModel actualizarMensaje(Long id, MensajeModel mensaje) {
+		if (mensajeRepository.existsById(id)) {
+			mensaje.setId(id);
+			return mensajeRepository.save(mensaje);
+		} else {
+			return null; // or throw an exception
+		}
+	}
 }

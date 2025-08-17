@@ -1,9 +1,12 @@
-	package com.modulo51.demo.model;
+package com.modulo51.demo.model;
+
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,7 +21,17 @@ public class TransferenciaModel {
 	private long id_beneficiario;
 
 	private double monto;
+
 	private String concepto;
+
+	private Date fecha;
+
+	@PrePersist
+	public void prePersist() {
+		if (fecha == null) { // Si la fecha viene nula desde el frontend
+			fecha = new Date(); // La establecemos a la fecha y hora actuales del servidor
+		}
+	}
 
 	public long getId() {
 		return id;

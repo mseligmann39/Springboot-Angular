@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
 @Entity
@@ -22,6 +23,13 @@ public class MensajeModel {
 	private String texto;
 
 	private Date fecha;
+
+	@PrePersist
+	public void prePersist() {
+		if (fecha == null) { // Si la fecha viene nula desde el frontend
+			fecha = new Date(); // La establecemos a la fecha y hora actuales del servidor
+		}
+	}
 
 	public long getId() {
 		return id;

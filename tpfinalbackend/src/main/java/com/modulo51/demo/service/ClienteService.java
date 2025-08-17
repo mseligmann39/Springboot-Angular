@@ -39,15 +39,11 @@ public class ClienteService {
 	}
 
 	public ClienteModel actualizarCliente(Long id, ClienteModel cliente) {
-		Optional<ClienteModel> clienteExistente = clienteRepository.findById(id);
-		if (clienteExistente.isPresent()) {
-			ClienteModel existente = clienteExistente.get();
-			existente.setNombre(cliente.getNombre());
-			existente.setEmail(cliente.getEmail());
-			existente.setId_gestor(cliente.getId_gestor());
-			return clienteRepository.save(existente);
+		if (clienteRepository.existsById(id)) {
+			cliente.setId(id);
+			return clienteRepository.save(cliente);
 		} else {
-			throw new IllegalArgumentException("No se encontró ningún cliente con el id: " + id);
+			return null; // or throw an exception
 		}
 	}
 

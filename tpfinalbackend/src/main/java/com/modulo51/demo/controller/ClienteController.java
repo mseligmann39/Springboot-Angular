@@ -17,6 +17,8 @@ import org.springframework.http.ResponseEntity;
 import com.modulo51.demo.model.ClienteModel;
 import com.modulo51.demo.service.ClienteService;
 
+import jakarta.validation.Valid;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/cliente")
@@ -31,7 +33,7 @@ public class ClienteController {
 	}
 	
 	@PostMapping
-	public ClienteModel guardarCliente(@RequestBody ClienteModel cliente) {
+	public ClienteModel guardarCliente(@Valid @RequestBody ClienteModel cliente) {
 		return this.clienteService.guardarCliente(cliente);
 				
 	}

@@ -39,4 +39,12 @@ public class TransferenciaService {
 		}
 		
 	}
+	public TransferenciaModel actualizarTransferencia(Long id, TransferenciaModel transferencia) {
+		if (transferenciaRepository.existsById(id)) {
+			transferencia.setId(id);
+			return transferenciaRepository.save(transferencia);
+		} else {
+			return null; // or throw an exception
+		}
+	}
 }
