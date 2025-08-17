@@ -128,20 +128,20 @@ El backend expone los siguientes endpoints bajo la URL base `/api`.
 ---
 
 ## 📁 Estructura del Proyecto
-├── tpfinalbackend/      # Proyecto de Spring Boot (Backend)
-│   ├── src/main/java/
-│   │   ├── controller/  # Controladores REST
-│   │   ├── model/       # Entidades JPA
-│   │   ├── repository/  # Repositorios Spring Data JPA
-│   │   └── service/     # Lógica de negocio
-│   └── pom.xml          # Dependencias y configuración de Maven
-│
-└── tpfinalFrontend/     # Proyecto de Angular (Frontend)
-├── src/app/
-│   ├── components/  # Componentes reutilizables (navbar, etc.)
-│   ├── cliente/     # Módulo y componentes para Clientes
-│   ├── gestores/    # Módulo y componentes para Gestores
-│   ├── mensajes/    # Módulo y componentes para Mensajes
-│   ├── transferencias/ # Módulo y componentes para Transferencias
-│   └── services/    # Servicios para la comunicación con la API
-└── angular.json     # Configuración del proyecto Angular
+proyecto/
+├── tpfinalbackend/              # Proyecto de Spring Boot (Backend)
+│   ├── src/main/java/           # Código fuente del backend
+│   │   ├── controller/          # Controladores REST
+│   │   ├── model/               # Entidades JPA
+│   │   ├── repository/          # Repositorios Spring Data JPA
+│   │   └── service/             # Lógica de negocio
+│   └── pom.xml                  # Dependencias y configuración de Maven
+└── tpfinalFrontend/             # Proyecto de Angular (Frontend)
+    ├── src/app/                 # Código fuente del frontend
+    │   ├── components/          # Componentes reutilizables (navbar, etc.)
+    │   ├── cliente/             # Módulo y componentes para Clientes
+    │   ├── gestores/            # Módulo y componentes para Gestores
+    │   ├── mensajes/            # Módulo y componentes para Mensajes
+    │   ├── transferencias/      # Módulo y componentes para Transferencias
+    │   └── services/            # Servicios para la comunicación con la API
+    └── angular.json             # Configuración del proyecto Angular
