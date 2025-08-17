@@ -33,4 +33,7 @@ export class MensajeListComponent {
       this.getMensajes();
     });
   }
+
+  
+
 }
