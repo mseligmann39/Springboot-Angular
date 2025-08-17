@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Gestor } from '../gestor';
 import { GestorService } from '../gestor.service'; 
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,8 @@ import { GestorService } from '../gestor.service';
 export class GestorListComponent {
   gestores!: Gestor[]; // Lista de gestores
 
-  constructor(private gestorService: GestorService) {}
+   // Inyecta el servicio y el router
+  constructor(private gestorService: GestorService, private router: Router) { }
 
   ngOnInit(): void {
     this.getGestores();
@@ -23,15 +25,17 @@ export class GestorListComponent {
     });
   }
 
-  updateGestor(id: number) {
-    // Navegar a la página de actualización del gestor
-    // Implementar la lógica de navegación aquí
-  }
-
-  deleteGestor(id: number) {
-    this.gestorService.deleteGestor(id).subscribe(() => {
-      console.log(`Gestor con ID ${id} eliminado`);
-      this.getGestores(); // Recargar la lista de gestores tras el borrado
-    });
-  }
+  actualizarGestor(id: number) {
+  // Usamos el router para navegar a la ruta de edición que definimos
+  this.router.navigate(['/gestores/editar', id]);
 }
+
+eliminarGestor(id: number) {
+  this.gestorService.deleteGestor(id).subscribe(response => {
+    console.log(response);
+    // Volvemos a cargar la lista para que el gestor eliminado desaparezca
+    this.getGestores();
+  });
+}
+
+ }

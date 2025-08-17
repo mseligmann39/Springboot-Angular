@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { Cliente } from '../cliente';
 import { ClienteService } from "../cliente.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cliente-list',
@@ -9,8 +10,12 @@ import { ClienteService } from "../cliente.service";
 })
 export class ClienteListComponent implements OnInit{
   clientes!:Cliente[]
-  router: any;
-  constructor(private clienteService : ClienteService){}
+  // Inyecta el servicio y el router
+  // El router es el que permite navegar entre componentes
+  // y el servicio es el que permite comunicarse con el backend
+  // a través de HTTP
+  // El servicio es el que se comunica con el backend a través de HTTP
+  constructor(private clienteService : ClienteService,private router:Router){}
 
   ngOnInit(): void {
     this.getClientes();

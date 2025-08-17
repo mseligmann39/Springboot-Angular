@@ -1,29 +1,29 @@
-<h2>Lista de gestores</h2>
+<h2>Lista de Gestores</h2>
+
+<button routerLink="nuevo" class="btn btn-primary mb-3">Añadir Gestor</button>
+
 <table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Edad</th>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th></th>
-        </tr>
-    </thead>
+   <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Edad</th>
+        <th>Acciones</th> </tr>
+</thead>
     <!-- El bucle recorre cada gestor de gestores -->
     <!-- Este archivo html está asociado a su respectivo .ts -->
     <!-- gestores es una propiedad definida en el .ts: gestores: Gestor[] -->
     <tbody>
-        <tr *ngFor= "let gestor of gestores">
-            <!-- {{}} Es interpolación para acceder a los campos -->
-            <td>{{gestor.id}}</td>
-            <td>{{gestor.edad}}</td>
-            <td>{{gestor.nombre}}</td>
-            <td>{{gestor.email}}</td>
-            <td>
-                <!--Estos botones llaman a los métodos definidos en el .ts del componente gestor-list-->
-                <button (click)="updateGestor(gestor.id)" class="btn btn-info">Update</button>
-                <button (click)="deleteGestor(gestor.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
-            </td>
-        </tr>
-    </tbody>
+    <tr *ngFor="let gestor of gestores">
+        <td>{{ gestor.id }}</td>
+        <td>{{ gestor.nombre }}</td>
+        <td>{{ gestor.email }}</td>
+        <td>{{ gestor.edad }}</td>
+        <td>
+            <button (click)="actualizarGestor(gestor.id)" class="btn btn-info">Editar</button>
+            <button (click)="eliminarGestor(gestor.id)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
+        </td>
+    </tr>
+</tbody>
 </table>

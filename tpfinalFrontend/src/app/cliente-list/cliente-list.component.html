@@ -21,8 +21,8 @@
             <td>{{cliente.email}}</td>
             <td>
                 <!--Estos botones llaman a los métodos definidos en el .ts del componente user-list-->
-                <button (click) = "updateCliente(cliente.id)" class = "btn btn-info"> Update</button>
-                <button (click) = "deleteCliente(cliente.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click)="updateCliente(cliente.id)" class = "btn btn-info"> Update</button>
+                <button (click)="deleteCliente(cliente.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
             </td>
         </tr>
     </tbody>
