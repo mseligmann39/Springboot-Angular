@@ -14,10 +14,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import org.springframework.http.ResponseEntity;
-
-import com.modulo51.demo.model.ClienteModel;
 import com.modulo51.demo.model.GestorModel;
 import com.modulo51.demo.service.GestorService;
 
@@ -47,24 +43,21 @@ public class GestorController {
 	}
 
 	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<Void> eliminarPorId(@PathVariable("id")Long id) {
-
+	public ResponseEntity<Void> eliminarPorId(@PathVariable("id") Long id) {
 
 		boolean ok = this.gestorService.eliminarGestor(id);
 
-		if (ok) { 
+		if (ok) {
 			return ResponseEntity.ok().build();
-		}
-		else {
+		} else {
 			return ResponseEntity.notFound().build();
 		}
 	}
 
-	 
 	// Actualizar Gestor
 	@PutMapping("/{id}")
 	public GestorModel actualizarGestor(@PathVariable("id") Long id, @RequestBody GestorModel gestor) {
 		return this.gestorService.actualizarGestor(id, gestor);
 	}
-		 
+
 }
