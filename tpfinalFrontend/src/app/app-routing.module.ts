@@ -8,7 +8,7 @@ import { UpdateClienteComponent } from './update-cliente/update-cliente.componen
 const routes: Routes = [
   { path: '', component: HomeComponent }, // La ruta raíz ahora muestra el Home
   { path: 'clientes', component: ClienteListComponent },
-  { path: 'crear-cliente', component: CreateClienteComponent },
+  { path: 'clientes/crear', component: CreateClienteComponent },
   { path: 'actualizar-cliente/:id', component: UpdateClienteComponent },
   { path: 'gestores', loadChildren: () => import('./gestores/gestores.module').then(m => m.GestoresModule) },
   // Aquí añadiremos las rutas para gestores, transferencias, etc. más adelante

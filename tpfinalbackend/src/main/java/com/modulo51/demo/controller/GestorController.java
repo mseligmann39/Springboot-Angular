@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.http.ResponseEntity;
 
 import com.modulo51.demo.model.GestorModel;
 import com.modulo51.demo.service.GestorService;
@@ -42,12 +45,16 @@ public class GestorController {
 	}
 
 	@DeleteMapping(path = "/{id}")
-	public String eliminarPorId(@PathVariable("id") Long id) {
+	public ResponseEntity<Void> eliminarPorId(@PathVariable("id")Long id) {
+
+
 		boolean ok = this.gestorService.eliminarGestor(id);
-		if (ok) {
-			return "Se elimino el gestor con id" + id;
-		} else {
-			return "Error al eliminar el gestor con id" + id + "o no existe";
+
+		if (ok) { 
+			return ResponseEntity.ok().build();
+		}
+		else {
+			return ResponseEntity.notFound().build();
 		}
 	}
 

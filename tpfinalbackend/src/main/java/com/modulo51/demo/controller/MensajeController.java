@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,13 +43,16 @@ public class MensajeController {
 	
 			
 	@DeleteMapping(path = "/{id}")
-	public String eliminarPorId(@PathVariable("id")Long id) {
+	public ResponseEntity<Void> eliminarPorId(@PathVariable("id")Long id) {
+
+
 		boolean ok = this.mensajeService.eliminarMensaje(id);
+
 		if (ok) { 
-			return "Se elimino el mensaje con id" + id;
+			return ResponseEntity.ok().build();
 		}
 		else {
-			return "Error al eliminar el mensaje con id" +id + "o no existe";
+			return ResponseEntity.notFound().build();
 		}
 	}
 

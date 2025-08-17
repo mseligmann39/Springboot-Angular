@@ -42,6 +42,6 @@ export class UpdateClienteComponent implements OnInit {
 
   //Redirección a lista de usuarios
   redirectClienteList(){
-    this.router.navigate(['/clientelist']);
+    this.router.navigate(['/clientes']);
   }
 }

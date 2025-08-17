@@ -27,7 +27,7 @@ export class ClienteListComponent implements OnInit{
 
   updateCliente(id: number){
     //Lo envía a través de app-routing.module.ts
-    this.router.navigate(['updatecliente', id]);
+    this.router.navigate(['actualizar-cliente/:' + id]); 
   }
 
   deleteCliente(id: number){

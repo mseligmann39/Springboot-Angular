@@ -37,7 +37,7 @@ export class CreateClienteComponent {
   }
 
   redirectClienteList(){
-    this.router.navigate(['/clienteList'])
+    this.router.navigate(['/clientes'])
   }
 
 

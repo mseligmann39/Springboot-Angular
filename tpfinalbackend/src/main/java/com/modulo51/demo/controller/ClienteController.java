@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.http.ResponseEntity;
 import com.modulo51.demo.model.ClienteModel;
 import com.modulo51.demo.service.ClienteService;
 
@@ -43,13 +43,16 @@ public class ClienteController {
 	
 			
 	@DeleteMapping(path = "/{id}")
-	public String eliminarPorId(@PathVariable("id")Long id) {
+	public ResponseEntity<Void> eliminarPorId(@PathVariable("id")Long id) {
+
+
 		boolean ok = this.clienteService.eliminarCliente(id);
+
 		if (ok) { 
-			return "Se elimino el cliente con id" + id;
+			return ResponseEntity.ok().build();
 		}
 		else {
-			return "Error al eliminar el cliente con id" +id + "o no existe";
+			return ResponseEntity.notFound().build();
 		}
 	}
 	
