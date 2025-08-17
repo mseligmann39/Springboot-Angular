@@ -33,6 +33,16 @@ public class TransferenciaModel {
 		}
 	}
 
+	// Getters y Setters
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
 	public long getId() {
 		return id;
 	}

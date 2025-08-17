@@ -1,1 +1,74 @@
-<p>transferencia-update works!</p>
+
+<div class="col-sm-6 offset-sm-3">
+    <h2>Actualización de una transferencia:</h2>
+
+    <form (ngSubmit)="onSubmitForm()">
+        <div class="form-group">
+            <label>ID</label>
+            <input
+                type="number"
+                class="form-control"
+                id="id"
+                [(ngModel)]="transferencia.id"
+                name="id"
+            />
+        </div>
+
+        <div class="form-group">
+            <label>ID Ordenante</label>
+            <input
+                type="number"
+                class="form-control"
+                id="id_ordenante"
+                [(ngModel)]="transferencia.id_ordenante"
+                name="id_ordenante"
+            />
+        </div>
+
+        <div class="form-group">
+            <label>ID Beneficiario</label>
+            <input
+                type="number"
+                class="form-control"
+                id="id_beneficiario"
+                [(ngModel)]="transferencia.id_beneficiario"
+                name="id_beneficiario"
+            />
+        </div>
+
+        <div class="form-group">
+            <label>Monto</label>
+            <input
+                type="number"
+                class="form-control"
+                id="monto"
+                [(ngModel)]="transferencia.monto"
+                name="monto"
+            />
+        </div>
+
+        <div class="form-group">
+            <label>Concepto</label>
+            <input
+                type="text"
+                class="form-control"
+                id="concepto"
+                [(ngModel)]="transferencia.concepto"
+                name="concepto"
+            />
+        </div>
+
+        <div class="form-group">
+            <label>Fecha</label>
+            <input
+                type="date"
+                class="form-control"
+                id="fecha"
+                [(ngModel)]="transferencia.fecha"
+                name="fecha"
+            />
+        </div>
+
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+</div>

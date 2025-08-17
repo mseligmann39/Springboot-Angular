@@ -1,1 +1,47 @@
-<p>transferencia-list works!</p>
+<h2>Lista de Transferencias</h2>
+
+<button routerLink="nuevo" class="btn btn-primary mb-3">
+  Añadir Transferencia
+</button>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ID Ordenante</th>
+      <th>ID Beneficiario</th>
+      <th>Monto</th>
+      <th>Concepto</th>
+      <th>Fecha</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <!-- El bucle recorre cada transferencia de transferencias -->
+  <!-- Este archivo html está asociado a su respectivo .ts -->
+  <!-- transferencias es una propiedad definida en el .ts: transferencias: Transferencia[] -->
+  <tbody>
+    <tr *ngFor="let transferencia of transferencias">
+      <td>{{ transferencia.id }}</td>
+      <td>{{ transferencia.id_ordenante }}</td>
+      <td>{{ transferencia.id_beneficiario }}</td>
+      <td>{{ transferencia.monto }}</td>
+      <td>{{ transferencia.concepto }}</td>
+      <td>{{ transferencia.fecha | date : "short" }}</td>
+      <td>
+        <button
+          (click)="actualizarTransferencia(transferencia.id)"
+          class="btn btn-info"
+        >
+          Editar
+        </button>
+        <button
+          (click)="eliminarTransferencia(transferencia.id)"
+          class="btn btn-danger"
+          style="margin-left: 10px"
+        >
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

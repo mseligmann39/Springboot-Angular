@@ -6,6 +6,7 @@ import { TransferenciasComponent } from './transferencias.component';
 import { TransferenciaListComponent } from './transferencia-list/transferencia-list.component';
 import { TransferenciaCreateComponent } from './transferencia-create/transferencia-create.component';
 import { TransferenciaUpdateComponent } from './transferencia-update/transferencia-update.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { TransferenciaUpdateComponent } from './transferencia-update/transferenc
   ],
   imports: [
     CommonModule,
-    TransferenciasRoutingModule
+    TransferenciasRoutingModule,
+    FormsModule
   ]
 })
 export class TransferenciasModule { }
